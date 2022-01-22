@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss"
+import Button from "./components/Button"
 
-function App() {
+//desestructuracion, esto es js no REACT
+//crear variables rapidamente a partir de un objeto
+
+const persona = {
+  nombre:"jacques",
+  apellido: "derrida",
+  profesion: "filosofa"
+}
+
+// const nombre = persona.nombre
+// const apellido = persona.apellido
+
+const {nombre, apellido} = persona
+
+console.log(nombre); // jacques
+console.log(apellido); //derrida
+
+const App =()=>{
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="contenedor">
+      <h1>Hola</h1>
+      <Button
+      mensaje="hola"
+      color="verde"/>
+      <Button
+      mensaje="chau"
+      color="rojo"/>
     </div>
-  );
+  )
 }
 
 export default App;
